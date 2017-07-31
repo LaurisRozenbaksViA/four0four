@@ -1,0 +1,6 @@
+ToDo List:
+  Index: Show Categories list and 5 last todos by creation date
+  Categories: Display list of all categories, display category with related todos by id
+  Task: Show list of all todo, Show todo by id with commets
+  Comments: Allow to create comment to todo
+  Page: Static Page Controller – showing static pages (about us, contact form, 1 simple page)
