@@ -1,5 +1,4 @@
-<?php
-include_once 'app/Controllers/dummy.php';
+
 
 echo "ToDo List";
 echo '<ul>';

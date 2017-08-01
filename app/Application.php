@@ -3,6 +3,7 @@
 namespace ToDoProject;
 
 use ToDoProject\Controllers\TaskController;
+use ToDoProject\Controllers\LandingController;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
@@ -23,8 +24,11 @@ class Application
         $containerBuilder->setParameter('resource.views', __DIR__ . '/views/');
         $containerBuilder->setParameter('resource.cache', __DIR__ . '/compilation_cache');
         $containerBuilder->register('repository.dummy', '\ToDoProject\Repositories\DummyTaskRepository');
+        $containerBuilder->register('repository.landing', '\ToDoProject\Repositories\LandingRepository');
         $containerBuilder->register('model.task', '\ToDoProject\Models\Task')
             ->addArgument(new Reference('repository.dummy'));
+        $containerBuilder->register('model.landing', 'ToDoProject\Models\Landing')
+            ->addArgument(new Reference('repository.landing'));
         $containerBuilder->register('twig.loader', '\Twig_Loader_Filesystem')
         ->addArgument('%resource.views%');
         $containerBuilder->register('twig.enviroment', '\Twig_Environment')
@@ -65,8 +69,10 @@ class Application
         $dispatcher = \FastRoute\simpleDispatcher(function(\FastRoute\RouteCollector $r) {
 
             $task = new TaskController($this->getContainer());
+            $landing = new LandingController($this->getContainer());
 
-            $r->addRoute('GET', '/', [$task, 'taskAction']);
+            $r->addRoute('GET', '/singletask', [$task, 'taskAction']);
+            $r->addRoute('GET', '/', [$landing, 'landingAction']);
         });
 
         return $dispatcher;
