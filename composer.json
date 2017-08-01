@@ -6,5 +6,9 @@
             "email": "rihardsmurnieks12@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "twig/twig": "^2.4",
+        "symfony/dependency-injection": "^3.3",
+        "nikic/fast-route": "^1.2"
+    }
 }
