@@ -1,0 +1,9 @@
+{% extends 'main.html.twig' %}
+
+{% block content %}
+    <h1>{{ taskContent.title }}</h1>
+    <h4>{{ taskContent.created_at }}</h4>
+    <h3>Category: {{ taskContent.category }}</h3>
+    <p>{{ taskContent.body }}</p>
+    <i>Author: {{ taskContent.author }}</i>
+{% endblock %}
