@@ -14,4 +14,16 @@ class DummyTaskRepository{
             'created_at'=>'2017-07-27 11:20:34'
         ];
     }
+    public function getTodo(){
+
+        return [
+          'title' => 'Sport',
+          'text' => 'Lorem ipsum',
+          'comment' => 'Comment is great'
+
+
+
+        ];
+
+    }
 }
