@@ -10,5 +10,10 @@
         "twig/twig": "^2.4",
         "symfony/dependency-injection": "^3.3",
         "nikic/fast-route": "^1.2"
+    },
+    "autoload": {
+
+        "psr-4": {"four0four\\": "four0four/"}
+
     }
 }
