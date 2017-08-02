@@ -1,0 +1,43 @@
+{% extends 'main.html.twig' %}
+
+{% block content %}
+    {#<h1>{{ about }}</h1>#}
+    <h1>About</h1>
+    <h3 style="padding-top:20px">What is ToDo List</h3>
+
+    <p style="font-size:18px; padding-top: 20px; padding-left:10px">
+        As its name implies, the To-do list on an article's talk page shows the list of improvements suggested for the article. It is created and formatted using the {{Todo}} template. The list is maintained by editors, writers, reviewers or readers like you as a way to focus your collaborative efforts. As such, they represent a tentative consensus that helps improve the efficiency of the editing process. A To-do list for this page may look like this:
+    <br /> <br />
+        To-do list for Wikipedia:To-do list:
+    </p>
+
+    <ul>
+        <li>Add info on and a link to the new President, Ivo Josipovic.</li>
+        <li>Fix coordinates for the Nova Zagora entry. They seem to be causing an error message, and I'm not sure why.</li>
+        <li>Add an infobox.</li>
+        <li>Update the Criticism section with the latest developments.</li>
+        <li>Add Pickwick tea from Sara Lee (pretty substantial brand in Europe).</li>
+        <li>Add blue box - "Municipalities and Communities of Wise County, Texas" - to match the quality of the other counties of the Fort Worth Metropolitan Division - Hood, Johnson, Parker, & Tarrant.</li>
+        <li>Eliminate the term “reverse racism”.</li>
+        <li>Link to To-Do list</li>
+        <li>Add Pictures</li>
+        <li>Do the To-Do List!</li>
+</ul>
+    <p style="font-size:18px; padding-top: 20px; padding-left:10px">
+        The template (tag) to include the above is {{todo}}. The dynamic list in the box is drawn from a subpage of the talk page represented simply by "to do."
+    </p>
+
+    <h3 style="padding-top:20px">Using ToDo List</h3>
+
+    <p style="font-size:18px; padding-top: 20px; padding-left:10px">
+        To use your list, simply work your way through it in order, dealing with the A priority tasks first, then the Bs, then the Cs, and so on. As you complete tasks, tick them off or strike them through.
+        <br/><br/>
+        What you put on your list and how you use it will depend on your situation. For instance, if you're in a sales-type role, a good way to motivate yourself is to keep your list relatively short, and aim to complete it every day.
+        <br/><br/>
+        But in you're in an operational role, or if tasks are large or dependent on too many other people, then it may be better to focus on a longer-term list, and "chip away" at it day-by-day.
+        <br/><br/>
+        Many people find it helpful to spend, say, 10 minutes at the end of the day, organizing tasks on their list for the next day.
+    </p>
+
+
+{% endblock %}
