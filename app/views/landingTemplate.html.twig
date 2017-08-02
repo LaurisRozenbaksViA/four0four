@@ -1,25 +1,37 @@
-{% set maxRange = landingContent.categotyCount-1 %}
-{% extends 'main.html.twig' %}
+{#{% set maxRange = landingContent.categotyCount-1 %}#}
+{#{% extends 'main.html.twig' %}#}
+
+{#{% block content %}#}
+
+    {#<h2>Categories</h2>#}
+
+    {#{% for i in range(0, maxRange) %}#}
+        {#<a href="/category={{ landingContent.category[i].category_id }}" >#}
+                {#<h3>{{ landingContent.category[i].title }}</h3>#}
+        {#</a>#}
+    {#{% endfor %}#}
+
+    {#<h2>Latest tasks</h2>#}
+
+    {#{% for i in range(0, 4) %}#}
+        {#<a href="/task={{ landingContent.latestPosts[i].todo_id }}" >#}
+            {#<div style="width: 45%; float: left; padding: 10px; margin: 10px; background-color: cornflowerblue">#}
+                    {#<h1>{{ landingContent.latestPosts[i].title }}</h1>#}
+                    {#<h4>{{ landingContent.latestPosts[i].created_at }}</h4>#}
+                    {#<i>Author: {{ landingContent.latestPosts[i].author }}</i>#}
+            {#</div>#}
+        {#</a>#}
+    {#{% endfor %}#}
+{#{% endblock %}#}
 
 {% block content %}
 
-    <h2>Categories</h2>
 
-    {% for i in range(0, maxRange) %}
-        <a href="/category={{ landingContent.category[i].category_id }}" >
-                <h3>{{ landingContent.category[i].title }}</h3>
-        </a>
-    {% endfor %}
-
-    <h2>Latest tasks</h2>
-
-    {% for i in range(0, 4) %}
-        <a href="/task={{ landingContent.latestPosts[i].todo_id }}" >
-            <div style="width: 45%; float: left; padding: 10px; margin: 10px; background-color: cornflowerblue">
-                    <h1>{{ landingContent.latestPosts[i].title }}</h1>
-                    <h4>{{ landingContent.latestPosts[i].created_at }}</h4>
-                    <i>Author: {{ landingContent.latestPosts[i].author }}</i>
-            </div>
-        </a>
-    {% endfor %}
+    <form action="CommentRepository" method="post">
+        <h2>Comment</h2>
+       <input type="text" name="commentTxt"><br>
+        <h3>Author</h3>
+        <input type="text" name="commentAuthor"><br>
+        <input type="submit">
+    </form>
 {% endblock %}

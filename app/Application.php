@@ -7,6 +7,7 @@ use ToDoProject\Controllers\TaskController;
 use ToDoProject\Controllers\CategoryController;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
+use ToDoProject\Repositories\CommentRepository;
 
 
 class Application
@@ -120,6 +121,7 @@ class Application
             $r->addRoute('GET', '/', [$landing, 'landingAction']);
             $r->addRoute('GET', '/task=[{taskID}]', [$task, 'taskAction']);
             $r->addRoute('GET', '/category=[{categoryID}]', [$category, 'categoryAction']);
+
         });
 
         return $dispatcher;
