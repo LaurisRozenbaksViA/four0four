@@ -6,6 +6,7 @@ use ToDoProject\Controllers\SportTODOcontrol;
 use ToDoProject\Controllers\CategoriesController;
 use ToDoProject\Controllers\TaskController;
 use ToDoProject\Controllers\LandingController;
+use ToDoProject\Controllers\AboutController;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
@@ -79,11 +80,13 @@ class Application
             $landing = new LandingController($this->getContainer());
             $todo = new SportTODOcontrol($this->getContainer());
             $categ = new CategoriesController($this->getContainer());
+            $aboutinfo = new AboutController($this->getContainer());
 
             $r->addRoute('GET', '/singletask', [$task, 'taskAction']);
             $r->addRoute('GET', '/', [$landing, 'landingAction']);
             $r->addRoute('GET', '/todo', [$todo, 'sportcontrol']);
             $r->addRoute('GET', '/categories', [$categ, 'categoriescontrol']);
+            $r->addRoute('GET', '/about', [$aboutinfo, 'aboutcontrol']);
 
         });
 
