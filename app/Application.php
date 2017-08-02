@@ -1,9 +1,6 @@
 <?php
 namespace ToDoProject;
 
-use ToDoProject\Controllers\SportTODOcontrol;
-use ToDoProject\Controllers\CategoriesController;
-
 use ToDoProject\Controllers\LandingController;
 use ToDoProject\Controllers\TaskController;
 use ToDoProject\Controllers\CategoryController;
