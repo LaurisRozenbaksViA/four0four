@@ -2,20 +2,20 @@
 
 namespace ToDoProject\Models;
 
-use ToDoProject\Repositories\DummyTaskRepository;
+use ToDoProject\Repositories\TaskRepository;
 
 class Task
 {
     private $task;
 
-    public function __construct(DummyTaskRepository $task)
+    public function __construct(TaskRepository $task)
     {
         $this->task = $task;
     }
 
-    public function getTaskContent() : array
+    public function getTaskContent($taskID)
     {
-        $taskContent = $this->task->getTask();
+        $taskContent = $this->task->getTaskContent($taskID);
         return $taskContent;
     }
 
