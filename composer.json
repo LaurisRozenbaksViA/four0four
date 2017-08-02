@@ -1,17 +1,17 @@
 {
-    "name": "bootcamp/four0four",
-    "authors": [
-        {
-            "name": "rihardsmurnieks",
-            "email": "rihardsmurnieks12@gmail.com"
-        }
-    ],
-    "require": {
-        "twig/twig": "^2.4",
-        "symfony/dependency-injection": "^3.3",
-        "nikic/fast-route": "^1.2"
-    },
-    "autoload": {
-        "psr-4": { "ToDoProject\\": "app/" }
+  "name": "bootcamp/four0four",
+  "authors": [
+    {
+      "name": "rihardsmurnieks",
+      "email": "rihardsmurnieks12@gmail.com"
     }
+  ],
+  "require": {
+    "twig/twig": "^2.4",
+    "symfony/dependency-injection": "^3.3",
+    "nikic/fast-route": "^1.2"
+  },
+  "autoload": {
+    "psr-4": { "ToDoProject\\": "app/" }
+  }
 }
