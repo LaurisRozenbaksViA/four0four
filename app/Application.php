@@ -29,15 +29,21 @@ class Application
         $containerBuilder->setParameter('resource.cache', __DIR__ . '/compilation_cache');
         $containerBuilder->register('repository.dummy', '\ToDoProject\Repositories\DummyTaskRepository');
 
+
         $containerBuilder->register('repository.landing', '\ToDoProject\Repositories\LandingRepository');
         $containerBuilder->register('model.task', '\ToDoProject\Models\Task')
             ->addArgument(new Reference('repository.dummy'));
         $containerBuilder->register('model.landing', '\ToDoProject\Models\Landing')
             ->addArgument(new Reference('repository.landing'));
 
+
+        $containerBuilder->register('repository.landing', '\ToDoProject\Repositories\LandingRepository');
+
         $containerBuilder->register('repository.dummy2', '\ToDoProject\Repositories\DummyCategoriesRepository');
         $containerBuilder->register('model.task', '\ToDoProject\Models\Task')
             ->addArgument(new Reference('repository.dummy'));
+        $containerBuilder->register('model.landing', 'ToDoProject\Models\Landing')
+            ->addArgument(new Reference('repository.landing'));
         $containerBuilder->register('model.todo', '\ToDoProject\Models\Kat1Model')
             ->addArgument(new Reference('repository.dummy'));
         $containerBuilder->register('model.categ', '\ToDoProject\Models\Categories')
@@ -87,7 +93,6 @@ class Application
             $landing = new LandingController($this->getContainer());
             $todo = new SportTODOcontrol($this->getContainer());
             $categ = new CategoriesController($this->getContainer());
-
 
             $r->addRoute('GET', '/singletask', [$task, 'taskAction']);
             $r->addRoute('GET', '/', [$landing, 'landingAction']);
