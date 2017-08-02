@@ -3,6 +3,7 @@ namespace ToDoProject;
 use ToDoProject\Controllers\LandingController;
 use ToDoProject\Controllers\TaskController;
 use ToDoProject\Controllers\CategoryController;
+use ToDoProject\Controllers\CommentController;
 use ToDoProject\Controllers\StaticController;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -36,12 +37,16 @@ class Application
             ->addArgument(new Reference('database'));
         $containerBuilder->register('repository.category', '\ToDoProject\Repositories\CategoryRepository')
             ->addArgument(new Reference('database'));
+        $containerBuilder->register('repository.comment', '\ToDoProject\Repositories\CommentSetRepository')
+            ->addArgument(new Reference('database'));
         $containerBuilder->register('model.task', '\ToDoProject\Models\Task')
             ->addArgument(new Reference('repository.task'));
         $containerBuilder->register('model.landing', '\ToDoProject\Models\Landing')
             ->addArgument(new Reference('repository.landing'));
         $containerBuilder->register('model.category', '\ToDoProject\Models\Category')
             ->addArgument(new Reference('repository.category'));
+        $containerBuilder->register('model.comment', '\ToDoProject\Models\Comment')
+            ->addArgument(new Reference('repository.comment'));
         $containerBuilder->register('twig.loader', '\Twig_Loader_Filesystem')
             ->addArgument('%resource.views%');
         $containerBuilder->register('twig.enviroment', '\Twig_Environment')
@@ -76,13 +81,13 @@ class Application
             $task = new TaskController($this->getContainer());
             $landing = new LandingController($this->getContainer());
             $category = new CategoryController($this->getContainer());
+            $comment = new CommentController($this->getContainer());
             $staticpages = new StaticController($this->getContainer());
             $r->addRoute('GET', '/', [$landing, 'landingAction']);
-            $r->addRoute('GET', '/task=[{taskID}]', [$task, 'taskAction']);
-            $r->addRoute('GET', '/category=[{categoryID}]', [$category, 'categoryAction']);
             $r->addRoute('GET', '/static/{staticID}', [$staticpages, 'staticcontrol']);
             $r->addRoute('GET', '/task/[{taskID}]', [$task, 'taskAction']);
             $r->addRoute('GET', '/category/[{categoryID}]', [$category, 'categoryAction']);
+            $r->addRoute('POST', '/comment', [$comment, 'commentAction']);
         });
         return $dispatcher;
     }

@@ -23,6 +23,7 @@ class TaskRepository extends Repository {
         $taskQuery = $this->db->select(
             'todo',
             [
+                'todo_id',
                 'title',
                 'body',
                 'author',

@@ -4,30 +4,26 @@
 
     <h2 style="padding-bottom:20px;">Categories:</h2>
 
+    {% for category in landingContent.category%}
+        <a  href="/category/{{ category.category_id }}" >
+            <h3 style="background-color:#3A405A; padding-bottom:5px; padding-left: 84px; padding-right:84px; display:inline; color:white;">{{ category.title }}</h3>
+        </a>
+    {% endfor %}
 
 
-        {% for category in landingContent.category%}
-            <a  href="/category/{{ category.category_id }}" >
-                <h3 style="background-color:#3A405A; padding-bottom:5px; padding-left: 84px; padding-right:84px; display:inline; color:white;">{{ category.title }}</h3>
-            </a>
+    <h2 style="padding-top:50px;">Latest tasks:</h2>
 
+    {% for latestPost in landingContent.latestPosts %}
+        <a href="/task/{{ latestPost.todo_id }}" >
+            <div style="width: 45%; float: left; padding: 10px; margin: 10px; background-color: #F9DEC9">
+                <h1>{{ latestPost.title }}</h1>
+                <h4>{{ latestPost.created_at }}</h4>
+                <i>Author: {{ latestPost.author }}</i>
+            </div>
+        </a>
+    {% endfor %}
 
-
-        {% endfor %}
-
-
-        <h2 style="padding-top:50px;">Latest tasks:</h2>
-
-        {% for latestPost in landingContent.latestPosts %}
-            <a href="/task/{{ latestPost.todo_id }}" >
-                <div style="width: 45%; float: left; padding: 10px; margin: 10px; background-color: #F9DEC9">
-                    <h1>{{ latestPost.title }}</h1>
-                    <h4>{{ latestPost.created_at }}</h4>
-                    <i>Author: {{ latestPost.author }}</i>
-                </div>
-            </a>
-        {% endfor %}
-        {% endblock %}
+{% endblock %}
 
 
     {#<form action="CommentRepository" method="post">#}
