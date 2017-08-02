@@ -37,41 +37,41 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item active" href="#">Home</a>
-            <a class="blog-nav-item" href="#">New features</a>
-            <a class="blog-nav-item" href="#">Press</a>
-            <a class="blog-nav-item" href="#">New hires</a>
-            <a class="blog-nav-item" href="#">About</a>
+            <a class="blog-nav-item active" href="/">Home</a>
+            <a class="blog-nav-item" href="/static/about">About us</a>
+            <a class="blog-nav-item" href="/static/contacts">Contact us</a>
+            <a class="blog-nav-item" href="/static/useful">Useful pages</a>
+
         </nav>
     </div>
 </div>
 
 <div class="container">
 
-    <div class="blog-header">
+    <div style="padding-left:180px" class="blog-header">
         <h1 class="blog-title">To Do Project</h1>
-        <p class="lead blog-description">Best task planner EVER!</p>
+        <p style ="padding-left:150px; font-size:20px",class="lead blog-description">Best task planner EVER!</p>
     </div>
 
     <div class="row">
 
-        <div class="col-sm-8 blog-main">
+        {#<div class="col-sm-8 blog-main">#}
             {% block content %}{% endblock %}
-        </div><!-- /.blog-main -->
+        {#</div><!-- /.blog-main -->#}
 
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-            <div class="sidebar-module sidebar-module-inset">
-                <h4>About</h4>
-                <p>something will be here.</p>
-            </div>
-            <div class="sidebar-module">
+        {#<div class="col-sm-3 col-sm-offset-1 blog-sidebar">#}
+            {#<div class="sidebar-module sidebar-module-inset">#}
+                {#<h4>About</h4>#}
+                {#<p>something will be here.</p>#}
+            {#</div>#}
+            {#<div class="sidebar-module">#}
 
-            </div>
-            <div class="sidebar-module">
+            {#</div>#}
+            {#<div class="sidebar-module">#}
 
-            </div>
-        </div>
-    </div>
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
 </div>
 
 <footer class="blog-footer">
@@ -98,3 +98,4 @@
         style="display: none;"></object>
 <span id="__symantecPKIClientDetector" style="display: none;">__PRESENT</span></body>
 </html>
+

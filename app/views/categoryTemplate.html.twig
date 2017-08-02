@@ -2,17 +2,16 @@
 
 {% block content %}
 
-    <h2>{{ categoryContent.description[0].title }}</h2>
-    <p>{{ categoryContent.description[0].description }}</p>
+    <h2>{{ categoryContent.description.title }}</h2>
+    <p>{{ categoryContent.description.description }}</p>
 
     {% if categoryContent.taskCount > 0 %}
-        {% set maxRange = categoryContent.taskCount -1 %}
-        {% for i in range(0, maxRange) %}
-            <a href="/task={{ categoryContent.tasks[i].todo_id }}" >
-                <div style="width: 45%; float: left; padding: 10px; margin: 10px; background-color: cornflowerblue">
-                    <h1>{{ categoryContent.tasks[i].title }}</h1>
-                    <h4>{{ categoryContent.tasks[i].created_at }}</h4>
-                    <i>Author: {{ categoryContent.tasks[i].author }}</i>
+        {% for task in categoryContent.tasks %}
+            <a href="/task/{{ task.todo_id }}" >
+                <div style="width: 45%; float: left; padding: 10px; margin: 10px; background-color:#F9DEC9;">
+                    <h1>{{ task.title }}</h1>
+                    <h4>{{ task.created_at }}</h4>
+                    <i>Author: {{ task.author }}</i>
                 </div>
             </a>
         {% endfor %}

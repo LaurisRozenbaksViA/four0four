@@ -1,37 +1,41 @@
-{#{% set maxRange = landingContent.categotyCount-1 %}#}
-{#{% extends 'main.html.twig' %}#}
-
-{#{% block content %}#}
-
-    {#<h2>Categories</h2>#}
-
-    {#{% for i in range(0, maxRange) %}#}
-        {#<a href="/category={{ landingContent.category[i].category_id }}" >#}
-                {#<h3>{{ landingContent.category[i].title }}</h3>#}
-        {#</a>#}
-    {#{% endfor %}#}
-
-    {#<h2>Latest tasks</h2>#}
-
-    {#{% for i in range(0, 4) %}#}
-        {#<a href="/task={{ landingContent.latestPosts[i].todo_id }}" >#}
-            {#<div style="width: 45%; float: left; padding: 10px; margin: 10px; background-color: cornflowerblue">#}
-                    {#<h1>{{ landingContent.latestPosts[i].title }}</h1>#}
-                    {#<h4>{{ landingContent.latestPosts[i].created_at }}</h4>#}
-                    {#<i>Author: {{ landingContent.latestPosts[i].author }}</i>#}
-            {#</div>#}
-        {#</a>#}
-    {#{% endfor %}#}
-{#{% endblock %}#}
+{% extends 'main.html.twig' %}
 
 {% block content %}
 
+    <h2 style="padding-bottom:20px;">Categories:</h2>
 
-    <form action="CommentRepository" method="post">
-        <h2>Comment</h2>
-       <input type="text" name="commentTxt"><br>
-        <h3>Author</h3>
-        <input type="text" name="commentAuthor"><br>
-        <input type="submit">
-    </form>
-{% endblock %}
+
+
+        {% for category in landingContent.category%}
+            <a  href="/category/{{ category.category_id }}" >
+                <h3 style="background-color:#3A405A; padding-bottom:5px; padding-left: 84px; padding-right:84px; display:inline; color:white;">{{ category.title }}</h3>
+            </a>
+
+
+
+        {% endfor %}
+
+
+        <h2 style="padding-top:50px;">Latest tasks:</h2>
+
+        {% for latestPost in landingContent.latestPosts %}
+            <a href="/task/{{ latestPost.todo_id }}" >
+                <div style="width: 45%; float: left; padding: 10px; margin: 10px; background-color: #F9DEC9">
+                    <h1>{{ latestPost.title }}</h1>
+                    <h4>{{ latestPost.created_at }}</h4>
+                    <i>Author: {{ latestPost.author }}</i>
+                </div>
+            </a>
+        {% endfor %}
+        {% endblock %}
+
+
+    {#<form action="CommentRepository" method="post">#}
+        {#<h2>Comment</h2>#}
+       {#<input type="text" name="commentTxt"><br>#}
+        {#<h3>Author</h3>#}
+        {#<input type="text" name="commentAuthor"><br>#}
+        {#<input type="submit">#}
+    {#</form>#}
+
+{#{% endblock %}#}
