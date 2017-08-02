@@ -1,5 +1,9 @@
 <?php
 namespace ToDoProject;
+
+use ToDoProject\Controllers\SportTODOcontrol;
+use ToDoProject\Controllers\CategoriesController;
+
 use ToDoProject\Controllers\LandingController;
 use ToDoProject\Controllers\TaskController;
 use ToDoProject\Controllers\CategoryController;
@@ -36,6 +40,7 @@ class Application
         $containerBuilder->register('repository.landing', '\ToDoProject\Repositories\LandingRepository')
             ->addArgument(new Reference('database'));
         $containerBuilder->register('repository.category', '\ToDoProject\Repositories\CategoryRepository')
+
             ->addArgument(new Reference('database'));
         $containerBuilder->register('model.task', '\ToDoProject\Models\Task')
             ->addArgument(new Reference('repository.task'));
@@ -43,6 +48,7 @@ class Application
             ->addArgument(new Reference('repository.landing'));
         $containerBuilder->register('model.category', '\ToDoProject\Models\Category')
             ->addArgument(new Reference('repository.category'));
+
         $containerBuilder->register('twig.loader', '\Twig_Loader_Filesystem')
             ->addArgument('%resource.views%');
         $containerBuilder->register('twig.enviroment', '\Twig_Environment')
@@ -79,6 +85,7 @@ class Application
             $task = new TaskController($this->getContainer());
             $landing = new LandingController($this->getContainer());
             $category = new CategoryController($this->getContainer());
+
             $r->addRoute('GET', '/', [$landing, 'landingAction']);
             $r->addRoute('GET', '/task=[{taskID}]', [$task, 'taskAction']);
             $r->addRoute('GET', '/category=[{categoryID}]', [$category, 'categoryAction']);
