@@ -1,9 +1,24 @@
+{% set maxRange = taskContent.commentCount-1 %}
+
 {% extends 'main.html.twig' %}
 
 {% block content %}
-    <h1>{{ taskContent.title }}</h1>
-    <h4>{{ taskContent.created_at }}</h4>
-    <h3>Category: {{ taskContent.category }}</h3>
-    <p>{{ taskContent.body }}</p>
-    <i>Author: {{ taskContent.author }}</i>
+    <h1>{{ taskContent.task[0].title }}</h1>
+    <h4>{{ taskContent.task[0].created_at }}</h4>
+    <p>{{ taskContent.task[0].body }}</p>
+    <i>Author: {{ taskContent.task[0].author }}</i>
+
+    <h4>Comments ({{ taskContent.commentCount}})</h4>
+
+    {% if taskContent.commentCount > 0 %}
+        {% set maxRange = taskContent.commentCount-1 %}
+        {% for i in range(0, maxRange) %}
+                <div style=" padding: 10px; margin: 10px; background-color: lightgray">
+                    <h5>{{ taskContent.comments[i].author }}</h5>
+                    <h6>{{ taskContent.comments[i].created_at }}</h6>
+                    <p>{{ taskContent.comments[i].body }}</p>
+                </div>
+        {% endfor %}
+    {% endif %}
+
 {% endblock %}
