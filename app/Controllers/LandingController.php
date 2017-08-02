@@ -2,19 +2,18 @@
 
 namespace ToDoProject\Controllers;
 
+
 class LandingController extends AbstractController
 {
-    public function landingAction ()
+
+    public function landingAction()
     {
-        $task = $this->container->get('model.landing');
-        $taskContent = $task->getDummyContent();
+        /** @var \Landing $landing */
+        $landing = $this->container->get('model.landing');
+        $landingContent = $landing->getLandingContent();
 
-        $templateVariables = ['taskContent' => $taskContent];
-        $template = 'landing.html.twig';
-
+        $templateVariables = ['landingContent' => $landingContent];
+        $template = 'landingTemplate.html.twig';
         return $this->render($template, $templateVariables);
-
-//        $ListOfDummy = new Dummy();
-//        $dummy = $ListOfDummy->getListOfDummy();
     }
 }

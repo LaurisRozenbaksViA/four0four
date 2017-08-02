@@ -1,22 +1,9 @@
 <?php
+
 namespace ToDoProject\Models;
-//class Landing
-//{
-//    public function getListOfDummy() : array
-//    {
-//        $listOfDummy = [
-//            'go to work',
-//            'dinner with girlfriends parents',
-//            'meeting with the Boss',
-//            'yoga',
-//            'buy tickets',
-//            'meet Marco'
-//        ];
-//       return $listOfDummy;
-//    }
-//}
 
 use ToDoProject\Repositories\LandingRepository;
+
 class Landing
 {
     private $landing;
@@ -26,9 +13,9 @@ class Landing
         $this->landing = $landing;
     }
 
-    public function getDummyContent() : array
+    public function getLandingContent()
     {
-        $landingContent = $this->landing->getDummy();
+        $landingContent = $this->landing->getLandingContent();
         return $landingContent;
     }
 
