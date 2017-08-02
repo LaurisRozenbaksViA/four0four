@@ -36,7 +36,7 @@ class Application
                 ]
             );
         $containerBuilder->setParameter('resource.cache', __DIR__ . '/compilation_cache');
-<<<<<<< HEAD
+
         $containerBuilder->register('repository.dummy', '\ToDoProject\Repositories\DummyTaskRepository');
 
 
@@ -50,7 +50,7 @@ class Application
         $containerBuilder->register('repository.landing', '\ToDoProject\Repositories\LandingRepository');
 
         $containerBuilder->register('repository.dummy2', '\ToDoProject\Repositories\DummyCategoriesRepository');
-=======
+
         $containerBuilder->register('repository.task', '\ToDoProject\Repositories\TaskRepository')
             ->addArgument(new Reference('database'));
         $containerBuilder->register('repository.landing', '\ToDoProject\Repositories\LandingRepository')
@@ -58,20 +58,20 @@ class Application
         $containerBuilder->register('repository.category', '\ToDoProject\Repositories\CategoryRepository')
 
             ->addArgument(new Reference('database'));
->>>>>>> 3589e6364c7447bff98ac9bab3849f90e06cbe99
+
         $containerBuilder->register('model.task', '\ToDoProject\Models\Task')
             ->addArgument(new Reference('repository.task'));
         $containerBuilder->register('model.landing', '\ToDoProject\Models\Landing')
             ->addArgument(new Reference('repository.landing'));
-<<<<<<< HEAD
+
         $containerBuilder->register('model.todo', '\ToDoProject\Models\Kat1Model')
             ->addArgument(new Reference('repository.dummy'));
         $containerBuilder->register('model.categ', '\ToDoProject\Models\Categories')
             ->addArgument(new Reference('repository.dummy2'));
-=======
+
         $containerBuilder->register('model.category', '\ToDoProject\Models\Category')
             ->addArgument(new Reference('repository.category'));
->>>>>>> 3589e6364c7447bff98ac9bab3849f90e06cbe99
+
 
         $containerBuilder->register('twig.loader', '\Twig_Loader_Filesystem')
         ->addArgument('%resource.views%');
