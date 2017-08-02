@@ -9,7 +9,8 @@
   "require": {
     "twig/twig": "^2.4",
     "symfony/dependency-injection": "^3.3",
-    "nikic/fast-route": "^1.2"
+    "nikic/fast-route": "^1.2",
+    "catfan/medoo": "^1.4"
   },
   "autoload": {
     "psr-4": { "ToDoProject\\": "app/" }
