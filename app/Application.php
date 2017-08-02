@@ -80,9 +80,14 @@ class Application
 
 
             $r->addRoute('GET', '/', [$landing, 'landingAction']);
+
             $r->addRoute('GET', '/task=[{taskID}]', [$task, 'taskAction']);
             $r->addRoute('GET', '/category=[{categoryID}]', [$category, 'categoryAction']);
             $r->addRoute('GET', '/static/{staticID}', [$staticpages, 'staticcontrol']);
+
+            $r->addRoute('GET', '/task/[{taskID}]', [$task, 'taskAction']);
+            $r->addRoute('GET', '/category/[{categoryID}]', [$category, 'categoryAction']);
+
         });
         return $dispatcher;
     }

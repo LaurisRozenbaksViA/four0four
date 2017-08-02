@@ -1,5 +1,3 @@
-{% set maxRange = taskContent.commentCount-1 %}
-
 {% extends 'main.html.twig' %}
 
 {% block content %}
@@ -12,11 +10,11 @@
 
     {% if taskContent.commentCount > 0 %}
         {% set maxRange = taskContent.commentCount-1 %}
-        {% for i in range(0, maxRange) %}
+        {% for comment in taskContent.comments %}
                 <div style=" padding: 10px; margin: 10px; background-color: lightgray">
-                    <h5>{{ taskContent.comments[i].author }}</h5>
-                    <h6>{{ taskContent.comments[i].created_at }}</h6>
-                    <p>{{ taskContent.comments[i].body }}</p>
+                    <h5>{{ comment.author }}</h5>
+                    <h6>{{ comment.created_at }}</h6>
+                    <p>{{ comment.body }}</p>
                 </div>
         {% endfor %}
     {% endif %}
