@@ -5,12 +5,6 @@
     <h2 style="margin-bottom:20px;">Categories</h2>
 
 
-    {% for i in range(0, maxRange) %}
-
-        <a style="background-color:cornflowerblue; padding:10px; display:inline; color:white;"
-           href="/category={{ landingContent.category[i].category_id }}" >
-               {{ landingContent.category[i].title }}
-
     {% for category in landingContent.category%}
         <a href="/category/{{ category.category_id }}" >
                 <h3>{{ category.title }}</h3>
