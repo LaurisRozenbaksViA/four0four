@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "87fdcaaa688ad0ebf253732931161a5d",
+    "content-hash": "6c9751ed6630db182b795238bf8d4ac2",
     "packages": [
+        {
+            "name": "catfan/medoo",
+            "version": "v1.4.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/catfan/Medoo.git",
+                "reference": "8ee8ae1c4df0fee3822a01333eab88893e548fcc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/catfan/Medoo/zipball/8ee8ae1c4df0fee3822a01333eab88893e548fcc",
+                "reference": "8ee8ae1c4df0fee3822a01333eab88893e548fcc",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "php": ">=5.4"
+            },
+            "suggest": {
+                "ext-pdo_dblib": "For MSSQL or Sybase database on Linux/UNIX platform",
+                "ext-pdo_mysql": "For MySQL or MariaDB database",
+                "ext-pdo_oci": "For Oracle database",
+                "ext-pdo_oci8": "For Oracle version 8 database",
+                "ext-pdo_pqsql": "For PostgreSQL database",
+                "ext-pdo_sqlite": "For SQLite database",
+                "ext-pdo_sqlsrv": "For MSSQL database on Windows platform"
+            },
+            "type": "framework",
+            "autoload": {
+                "psr-4": {
+                    "Medoo\\": "/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Angel Lai",
+                    "email": "angel@catfan.me"
+                }
+            ],
+            "description": "The lightest PHP database framework to accelerate development",
+            "homepage": "https://medoo.in",
+            "keywords": [
+                "database",
+                "lightweight",
+                "mariadb",
+                "mssql",
+                "mysql",
+                "oracle",
+                "php framework",
+                "postgresql",
+                "sql",
+                "sqlite"
+            ],
+            "time": "2017-06-24T14:43:07+00:00"
+        },
         {
             "name": "nikic/fast-route",
             "version": "v1.2.0",
@@ -100,16 +159,16 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v3.3.5",
+            "version": "v3.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "761e51a86f35f5b3e213e9b7f554fd91f9bffae4"
+                "reference": "8d70987f991481e809c63681ffe8ce3f3fde68a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/761e51a86f35f5b3e213e9b7f554fd91f9bffae4",
-                "reference": "761e51a86f35f5b3e213e9b7f554fd91f9bffae4",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/8d70987f991481e809c63681ffe8ce3f3fde68a0",
+                "reference": "8d70987f991481e809c63681ffe8ce3f3fde68a0",
                 "shasum": ""
             },
             "require": {
@@ -166,7 +225,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-17T14:07:10+00:00"
+            "time": "2017-07-28T15:27:31+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",

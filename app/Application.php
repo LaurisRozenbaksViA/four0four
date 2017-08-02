@@ -92,8 +92,8 @@ class Application
             $category = new CategoryController($this->getContainer());
 
             $r->addRoute('GET', '/', [$landing, 'landingAction']);
-            $r->addRoute('GET', '/task=[{taskID}]', [$task, 'taskAction']);
-            $r->addRoute('GET', '/category=[{categoryID}]', [$category, 'categoryAction']);
+            $r->addRoute('GET', '/task/[{taskID}]', [$task, 'taskAction']);
+            $r->addRoute('GET', '/category/[{categoryID}]', [$category, 'categoryAction']);
         });
 
         return $dispatcher;
